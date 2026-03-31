@@ -609,6 +609,94 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 @media(max-width:1024px){.compare-grid{grid-template-columns:repeat(2,1fr)}.cmp-card.featured{transform:translateY(0)}}
 @media(max-width:640px){.compare-grid{grid-template-columns:1fr}.cmp-card.featured{transform:translateY(0)}}
 
+/* ═══ UPGRADED CALCULATE TAB ═══ */
+.calc-layout{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+.calc-overview{display:flex;flex-direction:column;gap:1.2rem}
+.calc-ring-wrap{display:flex;justify-content:center;position:relative;padding:1rem 0}
+.calc-big-ring{width:180px;height:180px;border-radius:50%;position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column}
+.calc-big-ring svg{position:absolute;width:100%;height:100%;filter:drop-shadow(0 4px 12px rgba(99,102,241,.15))}
+.calc-big-ring .ring-center{position:relative;z-index:1;text-align:center}
+.calc-big-ring .ring-pct{font-family:var(--display);font-size:2.2rem;font-weight:800;color:var(--g900);line-height:1}
+.calc-big-ring .ring-lbl{font-size:.65rem;color:var(--g400);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-top:.15rem}
+.calc-legend{display:flex;justify-content:center;gap:1.5rem}
+.calc-leg-item{display:flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:600;color:var(--g600)}
+.calc-leg-dot{width:10px;height:10px;border-radius:3px}
+.calc-leg-dot.a{background:var(--pri)}
+.calc-leg-dot.b{background:var(--acc)}
+.calc-breakdown{display:flex;flex-direction:column;gap:.8rem}
+.calc-stat{display:flex;align-items:center;gap:.8rem;padding:1rem 1.2rem;background:var(--g50);border:1px solid var(--g100);border-radius:var(--r-lg);transition:all .35s var(--ease)}
+.calc-stat:hover{border-color:var(--pri-l);box-shadow:var(--sh-md);transform:translateX(4px)}
+.calc-stat-ic{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.calc-stat-ic svg{width:16px;height:16px}
+.calc-stat-ic.pri{background:var(--pri50);color:var(--pri)}
+.calc-stat-ic.acc{background:var(--acc-l);color:var(--acc-d)}
+.calc-stat-ic.amb{background:var(--amb-l);color:#B45309}
+.calc-stat-ic.vio{background:#EDE9FE;color:#7C3AED}
+.calc-stat-info{flex:1}
+.calc-stat-label{font-size:.72rem;color:var(--g500);font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+.calc-stat-val{font-family:var(--display);font-size:1.05rem;font-weight:800;color:var(--g900)}
+.calc-stat-badge{padding:.2rem .55rem;border-radius:100px;font-size:.6rem;font-weight:700}
+.calc-stat-badge.green{background:var(--acc-l);color:var(--acc-d)}
+.calc-stat-badge.blue{background:var(--pri50);color:var(--pri)}
+.calc-bars{display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem}
+.calc-bar-row{display:flex;align-items:center;gap:.7rem}
+.calc-bar-label{font-size:.68rem;font-weight:600;color:var(--g500);width:65px;text-align:right;flex-shrink:0}
+.calc-bar-track{flex:1;height:24px;background:var(--g100);border-radius:6px;overflow:hidden;position:relative}
+.calc-bar-fill{height:100%;border-radius:6px;display:flex;align-items:center;justify-content:flex-end;padding-right:.5rem;font-size:.6rem;font-weight:700;color:var(--w);transition:width 1s var(--ease)}
+.calc-bar-fill.a{background:linear-gradient(90deg,var(--pri),var(--vio))}
+.calc-bar-fill.b{background:linear-gradient(90deg,var(--acc),#34D399)}
+.calc-monthly{display:grid;grid-template-columns:repeat(6,1fr);gap:3px;margin-top:.5rem}
+.calc-month{padding:.4rem .2rem;border-radius:4px;text-align:center;font-size:.55rem;font-weight:600;transition:all .2s}
+.calc-month-name{color:var(--g400);font-size:.5rem;margin-bottom:.15rem}
+.calc-month-val{color:var(--g700)}
+.calc-month.hi{background:var(--pri50);color:var(--pri)}
+.calc-month.lo{background:var(--acc-l);color:var(--acc-d)}
+@media(max-width:768px){.calc-layout{grid-template-columns:1fr}.calc-big-ring{width:150px;height:150px}.calc-big-ring .ring-pct{font-size:1.8rem}}
+@media(max-width:600px){.calc-big-ring{width:130px;height:130px}.calc-big-ring .ring-pct{font-size:1.5rem}.calc-stat{padding:.8rem}.calc-bar-label{width:50px;font-size:.6rem}}
+
+/* ═══ UPGRADED PLAN TAB ═══ */
+.plan-layout{max-width:640px;margin:0 auto;position:relative}
+.plan-doc{background:var(--w);border:1px solid var(--g200);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-md)}
+.plan-doc-header{background:linear-gradient(135deg,var(--g950),#1E293B);padding:1.8rem 2rem;position:relative;overflow:hidden}
+.plan-doc-header::before{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;background:linear-gradient(135deg,var(--pri),var(--vio));opacity:.15;border-radius:50%;filter:blur(40px)}
+.plan-doc-badge{display:inline-flex;align-items:center;gap:.3rem;padding:.25rem .65rem;border-radius:100px;background:rgba(16,185,129,.15);color:var(--acc);font-size:.6rem;font-weight:700;letter-spacing:.04em;margin-bottom:.8rem;border:1px solid rgba(16,185,129,.2)}
+.plan-doc-badge svg{width:12px;height:12px}
+.plan-doc-title{font-family:var(--display);font-size:1.2rem;font-weight:800;color:var(--w);margin-bottom:.3rem}
+.plan-doc-meta{display:flex;gap:1.2rem;flex-wrap:wrap}
+.plan-doc-meta span{font-size:.65rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:.3rem}
+.plan-doc-meta svg{width:12px;height:12px}
+.plan-body{padding:1.8rem 2rem}
+.plan-section{margin-bottom:1.5rem}
+.plan-section:last-child{margin-bottom:0}
+.plan-sec-header{display:flex;align-items:center;gap:.5rem;margin-bottom:.7rem;padding-bottom:.5rem;border-bottom:1px solid var(--g100)}
+.plan-sec-num{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:.6rem;flex-shrink:0}
+.plan-sec-header:nth-of-type(1) .plan-sec-num,.plan-section:nth-child(1) .plan-sec-num{background:var(--pri50);color:var(--pri)}
+.plan-section:nth-child(2) .plan-sec-num{background:var(--acc-l);color:var(--acc-d)}
+.plan-section:nth-child(3) .plan-sec-num{background:var(--amb-l);color:#B45309}
+.plan-section:nth-child(4) .plan-sec-num{background:#EDE9FE;color:#7C3AED}
+.plan-section:nth-child(5) .plan-sec-num{background:#FCE7F3;color:#DB2777}
+.plan-sec-title{font-family:var(--display);font-size:.78rem;font-weight:700;color:var(--g900);text-transform:uppercase;letter-spacing:.03em}
+.plan-items{display:flex;flex-direction:column;gap:.4rem}
+.plan-item{display:flex;align-items:flex-start;gap:.5rem;padding:.55rem .7rem;border-radius:var(--r);font-size:.75rem;color:var(--g600);line-height:1.5;transition:all .25s var(--ease);background:var(--g50);border:1px solid transparent}
+.plan-item:hover{border-color:var(--g200);background:var(--w);transform:translateX(4px)}
+.plan-item-check{width:16px;height:16px;border-radius:4px;background:var(--acc);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.plan-item-check svg{width:10px;height:10px;color:var(--w);stroke-width:3}
+.plan-item strong{color:var(--g900);font-weight:600}
+.plan-footer{padding:1.2rem 2rem;background:var(--g50);border-top:1px solid var(--g100);display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap}
+.plan-footer-status{display:flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:600;color:var(--acc-d)}
+.plan-footer-status svg{width:14px;height:14px}
+.plan-footer-actions{display:flex;gap:.5rem}
+.plan-footer-btn{padding:.35rem .8rem;border-radius:100px;font-size:.65rem;font-weight:600;border:1px solid var(--g200);background:var(--w);color:var(--g600);display:flex;align-items:center;gap:.3rem;cursor:pointer;transition:all .25s var(--ease)}
+.plan-footer-btn:hover{border-color:var(--pri);color:var(--pri);background:var(--pri50)}
+.plan-footer-btn svg{width:12px;height:12px}
+.plan-progress{margin:0 2rem 1.5rem;padding-top:1rem}
+.plan-progress-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem}
+.plan-progress-label{font-size:.65rem;font-weight:600;color:var(--g500);text-transform:uppercase;letter-spacing:.04em}
+.plan-progress-pct{font-family:var(--display);font-size:.75rem;font-weight:800;color:var(--acc-d)}
+.plan-progress-track{height:6px;background:var(--g100);border-radius:3px;overflow:hidden}
+.plan-progress-fill{height:100%;background:linear-gradient(90deg,var(--acc),#34D399);border-radius:3px;width:85%}
+@media(max-width:600px){.plan-doc-header{padding:1.3rem 1.2rem}.plan-body{padding:1.3rem 1.2rem}.plan-footer{padding:1rem 1.2rem}.plan-doc-title{font-size:1rem}.plan-progress{margin:0 1.2rem 1.2rem}}
+
 /* ═══ COMPREHENSIVE MOBILE RESPONSIVE FIXES ═══ */
 
 /* --- Tablet (max 1024px) --- */
@@ -946,63 +1034,79 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
       <div class="demo-visual">
         <div class="demo-browser">
           <div class="demo-browser-toolbar">
-            <div class="demo-browser-dots">
-              <span></span><span></span><span></span>
-            </div>
-            <div class="demo-browser-url">custodyxchange.com/demo</div>
+            <div class="demo-browser-dots"><span></span><span></span><span></span></div>
+            <div class="demo-browser-url">custodyxchange.com/calculate</div>
           </div>
           <div class="demo-browser-content">
-        <div class="demo-calc">
-          <div class="demo-rings">
-            <div class="demo-ring">
-              <svg viewBox="0 0 140 140">
-                <circle cx="70" cy="70" r="65" fill="none" stroke="#E5E7EB" stroke-width="12"/>
-                <circle cx="70" cy="70" r="65" fill="none" stroke="#6366F1" stroke-width="12" stroke-dasharray="204 360" stroke-linecap="round" transform="rotate(-90 70 70)"/>
-              </svg>
-              <div class="demo-ring-val">
-                <strong>50%</strong>
-                <span>Parent A</span>
-              </div>
-            </div>
-            <div class="demo-ring">
-              <svg viewBox="0 0 140 140">
-                <circle cx="70" cy="70" r="65" fill="none" stroke="#E5E7EB" stroke-width="12"/>
-                <circle cx="70" cy="70" r="65" fill="none" stroke="#10B981" stroke-width="12" stroke-dasharray="180 360" stroke-linecap="round" transform="rotate(-90 70 70)"/>
-              </svg>
-              <div class="demo-ring-val">
-                <strong>50%</strong>
-                <span>Parent B</span>
-              </div>
-            </div>
-          </div>
-          <div class="demo-stats">
-            <div class="demo-stat-row">
-              <div class="demo-stat-label">Parent A Overnights</div>
-              <div class="demo-stat-val">183</div>
-            </div>
-            <div class="demo-stat-row">
-              <div class="demo-stat-label">Parent B Overnights</div>
-              <div class="demo-stat-val">182</div>
-            </div>
-            <div class="demo-stat-row">
-              <div class="demo-stat-label">Annual Calculation</div>
-              <div class="demo-stat-val" style="color:var(--acc)">Balanced</div>
-            </div>
-            <div class="demo-chart">
-              <div>
-                <div class="demo-chart-bar">
-                  <div class="demo-chart-col" style="height:85%" data-val="183 nights"></div>
+            <div style="font-family:var(--display);font-size:.9rem;font-weight:700;color:var(--g900);margin-bottom:.3rem">Parenting Time Calculator</div>
+            <div style="font-size:.72rem;color:var(--g400);margin-bottom:1.2rem">Annual breakdown for 2026 based on your schedule</div>
+            <div class="calc-layout">
+              <!-- Left: ring + legend + monthly -->
+              <div class="calc-overview">
+                <div class="calc-ring-wrap">
+                  <div class="calc-big-ring">
+                    <svg viewBox="0 0 200 200">
+                      <circle cx="100" cy="100" r="85" fill="none" stroke="var(--g100)" stroke-width="18"/>
+                      <circle cx="100" cy="100" r="85" fill="none" stroke="url(#calcGradA)" stroke-width="18" stroke-dasharray="268 534" stroke-linecap="round" transform="rotate(-90 100 100)"/>
+                      <circle cx="100" cy="100" r="85" fill="none" stroke="url(#calcGradB)" stroke-width="18" stroke-dasharray="254 534" stroke-dashoffset="-274" stroke-linecap="round" transform="rotate(-90 100 100)"/>
+                      <defs>
+                        <linearGradient id="calcGradA" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#6366F1"/><stop offset="100%" stop-color="#8B5CF6"/></linearGradient>
+                        <linearGradient id="calcGradB" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#10B981"/><stop offset="100%" stop-color="#34D399"/></linearGradient>
+                      </defs>
+                    </svg>
+                    <div class="ring-center">
+                      <div class="ring-pct">50/50</div>
+                      <div class="ring-lbl">Time split</div>
+                    </div>
+                  </div>
                 </div>
-                <div class="demo-chart-label">Parent A</div>
-              </div>
-              <div>
-                <div class="demo-chart-bar">
-                  <div class="demo-chart-col p2" style="height:83%" data-val="182 nights"></div>
+                <div class="calc-legend">
+                  <div class="calc-leg-item"><span class="calc-leg-dot a"></span>Parent A</div>
+                  <div class="calc-leg-item"><span class="calc-leg-dot b"></span>Parent B</div>
                 </div>
-                <div class="demo-chart-label">Parent B</div>
+                <!-- Monthly mini bars -->
+                <div style="margin-top:.5rem">
+                  <div style="font-size:.65rem;font-weight:700;color:var(--g500);text-transform:uppercase;letter-spacing:.04em;margin-bottom:.4rem">Monthly Overview</div>
+                  <div class="calc-bars">
+                    <div class="calc-bar-row"><span class="calc-bar-label">Parent A</span><div class="calc-bar-track"><div class="calc-bar-fill a" style="width:50.1%">183 nights</div></div></div>
+                    <div class="calc-bar-row"><span class="calc-bar-label">Parent B</span><div class="calc-bar-track"><div class="calc-bar-fill b" style="width:49.9%">182 nights</div></div></div>
+                  </div>
+                </div>
+                <div class="calc-monthly">
+                  <div class="calc-month hi"><div class="calc-month-name">Jan</div><div class="calc-month-val">16</div></div>
+                  <div class="calc-month lo"><div class="calc-month-name">Feb</div><div class="calc-month-val">14</div></div>
+                  <div class="calc-month hi"><div class="calc-month-name">Mar</div><div class="calc-month-val">16</div></div>
+                  <div class="calc-month lo"><div class="calc-month-name">Apr</div><div class="calc-month-val">15</div></div>
+                  <div class="calc-month hi"><div class="calc-month-name">May</div><div class="calc-month-val">16</div></div>
+                  <div class="calc-month lo"><div class="calc-month-name">Jun</div><div class="calc-month-val">15</div></div>
+                </div>
+              </div>
+              <!-- Right: stat cards -->
+              <div class="calc-breakdown">
+                <div class="calc-stat">
+                  <div class="calc-stat-ic pri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 6v6l4 2"/></svg></div>
+                  <div class="calc-stat-info"><div class="calc-stat-label">Total Overnights</div><div class="calc-stat-val">365 nights</div></div>
+                  <span class="calc-stat-badge green">Balanced</span>
+                </div>
+                <div class="calc-stat">
+                  <div class="calc-stat-ic acc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                  <div class="calc-stat-info"><div class="calc-stat-label">Parent A</div><div class="calc-stat-val">183 nights <span style="font-size:.7rem;color:var(--g400);font-weight:500">· 50.1%</span></div></div>
+                </div>
+                <div class="calc-stat">
+                  <div class="calc-stat-ic amb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                  <div class="calc-stat-info"><div class="calc-stat-label">Parent B</div><div class="calc-stat-val">182 nights <span style="font-size:.7rem;color:var(--g400);font-weight:500">· 49.9%</span></div></div>
+                </div>
+                <div class="calc-stat">
+                  <div class="calc-stat-ic vio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+                  <div class="calc-stat-info"><div class="calc-stat-label">Holiday Adjustments</div><div class="calc-stat-val">8 days <span style="font-size:.7rem;color:var(--g400);font-weight:500">· Alternating</span></div></div>
+                  <span class="calc-stat-badge blue">Auto-split</span>
+                </div>
+                <div class="calc-stat">
+                  <div class="calc-stat-ic pri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                  <div class="calc-stat-info"><div class="calc-stat-label">Difference</div><div class="calc-stat-val" style="color:var(--acc)">Only 1 night</div></div>
+                </div>
               </div>
             </div>
-          </div>
           </div>
         </div>
       </div>
@@ -1013,40 +1117,89 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
       <div class="demo-visual">
         <div class="demo-browser">
           <div class="demo-browser-toolbar">
-            <div class="demo-browser-dots">
-              <span></span><span></span><span></span>
-            </div>
-            <div class="demo-browser-url">custodyxchange.com/demo</div>
+            <div class="demo-browser-dots"><span></span><span></span><span></span></div>
+            <div class="demo-browser-url">custodyxchange.com/plan</div>
           </div>
           <div class="demo-browser-content">
-        <div class="demo-plan">
-          <h3 class="demo-plan-h">Parenting Plan Summary</h3>
+            <div class="plan-layout">
+              <div class="plan-doc">
+                <!-- Document Header -->
+                <div class="plan-doc-header">
+                  <div class="plan-doc-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> COURT-READY</div>
+                  <div class="plan-doc-title">Parenting Plan — Smith Family</div>
+                  <div class="plan-doc-meta">
+                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Generated Mar 31, 2026</span>
+                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> 12 pages</span>
+                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Jurisdiction: TX</span>
+                  </div>
+                </div>
 
-          <div class="demo-plan-sec">
-            <div class="demo-plan-sec-h">Custody Schedule</div>
-            <div class="demo-plan-item">50/50 alternating weekly schedule</div>
-            <div class="demo-plan-item">School-year modifications included</div>
-          </div>
+                <!-- Progress bar -->
+                <div class="plan-progress">
+                  <div class="plan-progress-header">
+                    <span class="plan-progress-label">Plan completeness</span>
+                    <span class="plan-progress-pct">85%</span>
+                  </div>
+                  <div class="plan-progress-track"><div class="plan-progress-fill"></div></div>
+                </div>
 
-          <div class="demo-plan-sec">
-            <div class="demo-plan-sec-h">Holidays & Vacations</div>
-            <div class="demo-plan-item">Thanksgiving (even years: Parent A)</div>
-            <div class="demo-plan-item">Christmas split: Dec 17 - Jan 2</div>
-            <div class="demo-plan-item">Summer: June 1 - Aug 31 shared</div>
-          </div>
+                <!-- Plan Body -->
+                <div class="plan-body">
+                  <div class="plan-section">
+                    <div class="plan-sec-header"><div class="plan-sec-num">1</div><div class="plan-sec-title">Custody Schedule</div></div>
+                    <div class="plan-items">
+                      <div class="plan-item"><div class="plan-item-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></div><span><strong>50/50 alternating weekly</strong> schedule starting Mondays at school drop-off</span></div>
+                      <div class="plan-item"><div class="plan-item-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></div><span>School-year modifications: <strong>Wed overnight</strong> with non-custodial parent</span></div>
+                      <div class="plan-item"><div class="plan-item-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></div><span>Summer schedule adjustment: <strong>2-week blocks</strong> alternating June through August</span></div>
+                    </div>
+                  </div>
 
-          <div class="demo-plan-sec">
-            <div class="demo-plan-sec-h">Transportation</div>
-            <div class="demo-plan-item">Handoff at school on Wed 3pm</div>
-            <div class="demo-plan-item">Each parent covers own travel</div>
-          </div>
+                  <div class="plan-section">
+                    <div class="plan-sec-header"><div class="plan-sec-num">2</div><div class="plan-sec-title">Holidays &amp; Special Days</div></div>
+                    <div class="plan-items">
+                      <div class="plan-item"><div class="plan-item-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></div><span>Thanksgiving: <strong>alternating yearly</strong> (even years: Parent A)</span></div>
+                      <div class="plan-item"><div class="plan-item-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></div><span>Christmas: split <strong>Dec 17 - Dec 25</strong> / <strong>Dec 25 - Jan 2</strong>, alternating</span></div>
+                      <div class="plan-item"><div class="plan-item-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></div><span>Children's birthdays: <strong>shared day</strong> with parent-specific celebration times</span></div>
+                    </div>
+                  </div>
 
-          <div class="demo-plan-sec">
-            <div class="demo-plan-sec-h">Communication</div>
-            <div class="demo-plan-item">Weekly updates via app messaging</div>
-            <div class="demo-plan-item">24-hour notice for schedule changes</div>
-          </div>
-        </div>
+                  <div class="plan-section">
+                    <div class="plan-sec-header"><div class="plan-sec-num">3</div><div class="plan-sec-title">Transportation &amp; Handoffs</div></div>
+                    <div class="plan-items">
+                      <div class="plan-item"><div class="plan-item-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></div><span>Primary handoff at <strong>school</strong> on transition days (Mondays 8:00 AM)</span></div>
+                      <div class="plan-item"><div class="plan-item-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></div><span>Non-school days: <strong>receiving parent picks up</strong> from other parent's home by 10 AM</span></div>
+                    </div>
+                  </div>
+
+                  <div class="plan-section">
+                    <div class="plan-sec-header"><div class="plan-sec-num">4</div><div class="plan-sec-title">Communication Guidelines</div></div>
+                    <div class="plan-items">
+                      <div class="plan-item"><div class="plan-item-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></div><span>All schedule-related communication through <strong>CustodyXChange messaging</strong></span></div>
+                      <div class="plan-item"><div class="plan-item-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></div><span>Minimum <strong>24-hour notice</strong> required for any schedule changes</span></div>
+                      <div class="plan-item"><div class="plan-item-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></div><span>Emergency contact: <strong>both parents reachable</strong> by phone at all times</span></div>
+                    </div>
+                  </div>
+
+                  <div class="plan-section">
+                    <div class="plan-sec-header"><div class="plan-sec-num">5</div><div class="plan-sec-title">Expenses &amp; Financial</div></div>
+                    <div class="plan-items">
+                      <div class="plan-item"><div class="plan-item-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></div><span>Medical expenses split <strong>50/50</strong> after insurance</span></div>
+                      <div class="plan-item"><div class="plan-item-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></div><span>Extracurricular activities: <strong>mutual written consent</strong> required for new enrollments</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Document Footer -->
+                <div class="plan-footer">
+                  <div class="plan-footer-status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Court-ready format</div>
+                  <div class="plan-footer-actions">
+                    <div class="plan-footer-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Export PDF</div>
+                    <div class="plan-footer-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg> Share</div>
+                    <div class="plan-footer-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.83 2.83 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg> Edit</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
